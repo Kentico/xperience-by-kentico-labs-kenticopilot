@@ -17,6 +17,7 @@ using Kentico.EmailBuilder.Web.Mvc;
 using Kentico.Membership;
 using Kentico.OnlineMarketing.Web.Mvc;
 using Kentico.PageBuilder.Web.Mvc;
+using Kentico.Xperience.ManagementApi;
 using Kentico.Xperience.Mjml;
 using Kentico.Web.Mvc;
 
@@ -79,6 +80,11 @@ ConfigureMembershipServices(builder.Services);
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.Configure<UrlResolveOptions>(options => options.UseSSL = false);
+
+    builder.Services.AddKenticoManagementApi(options =>
+    {
+        options.Secret = "rrvpzpu18m5385tfw1h9j5luxton5vyv";
+    });
 }
 
 var app = builder.Build();
@@ -93,6 +99,10 @@ app.UseCookiePolicy();
 
 app.UseAuthentication();
 
+if (builder.Environment.IsDevelopment())
+{
+    app.UseKenticoManagementApi();
+}
 
 app.UseKentico();
 
