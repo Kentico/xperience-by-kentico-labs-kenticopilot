@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "generatedAt": "2026-02-12",
+    "version": "1.0",
+    "source": "kentico-cm-mcp"
+  },
+  "requirements": {
+    "approach": "PAGE-BUILDER",
+    "channels": ["website", "email"],
+    "contentReuse": "extensive"
+  },
+  "contentTypes": [
+    {
+      "name": "DancingGoat.ProductPage",
+      "displayName": "Product Page",
+      "description": "Existing page type included for validation; links a page to a reusable product item.",
+      "type": "content",
+      "useFor": "Pages",
+      "fields": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "dataType": "content_item",
+          "required": true,
+          "allowedContentTypes": ["DancingGoat.Product"],
+          "maxItems": 1
+        }
+      ]
+    },
+    {
+      "name": "DancingGoat.Product",
+      "displayName": "Product",
+      "description": "Existing reusable product item (placeholder for current model).",
+      "type": "content",
+      "fields": []
+    },
+    {
+      "name": "DancingGoat.IndustryExpert",
+      "displayName": "Industry Expert",
+      "description": "Person recognized in coffee enthusiast communities whose opinions are used in endorsements.",
+      "type": "content",
+      "fields": [
+        {
+          "name": "fullName",
+          "displayName": "Full name",
+          "dataType": "text",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "title",
+          "displayName": "Title",
+          "dataType": "text",
+          "required": false,
+          "maxLength": 200
+        },
+        {
+          "name": "organization",
+          "displayName": "Organization",
+          "dataType": "text",
+          "required": false,
+          "maxLength": 200
+        },
+        {
+          "name": "bio",
+          "displayName": "Short bio",
+          "dataType": "rich_text",
+          "required": false
+        },
+        {
+          "name": "photo",
+          "displayName": "Photo",
+          "dataType": "asset",
+          "required": false,
+          "allowedExtensions": ["jpg", "jpeg", "png", "webp"],
+          "maxAssets": 1
+        },
+        {
+          "name": "websiteUrl",
+          "displayName": "Website URL",
+          "dataType": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "DancingGoat.Endorsement",
+      "displayName": "Endorsement",
+      "description": "Endorsement of a product by an Industry Expert with details used on product pages, landing pages, and emails.",
+      "type": "content",
+      "fields": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "dataType": "text",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "expert",
+          "displayName": "Industry expert",
+          "dataType": "content_item",
+          "required": true,
+          "allowedContentTypes": ["DancingGoat.IndustryExpert"],
+          "maxItems": 1
+        },
+        {
+          "name": "product",
+          "displayName": "Endorsed product",
+          "dataType": "content_item",
+          "required": true,
+          "allowedContentTypes": ["DancingGoat.Product"],
+          "maxItems": 1
+        },
+        {
+          "name": "summaryQuote",
+          "displayName": "Summary quote",
+          "dataType": "text",
+          "required": true,
+          "maxLength": 280
+        },
+        {
+          "name": "details",
+          "displayName": "Details",
+          "dataType": "rich_text",
+          "required": false
+        },
+        {
+          "name": "rating",
+          "displayName": "Rating",
+          "dataType": "number",
+          "required": false,
+          "minValue": 1,
+          "maxValue": 5,
+          "precision": 1
+        },
+        {
+          "name": "endorsedOn",
+          "displayName": "Endorsed on",
+          "dataType": "date_time",
+          "required": false
+        },
+        {
+          "name": "image",
+          "displayName": "Image",
+          "dataType": "asset",
+          "required": false,
+          "allowedExtensions": ["jpg", "jpeg", "png", "webp"],
+          "maxAssets": 1
+        },
+        {
+          "name": "featured",
+          "displayName": "Featured",
+          "dataType": "boolean",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "sourceContentType": "DancingGoat.Endorsement",
+      "sourceField": "expert",
+      "targetContentType": "DancingGoat.IndustryExpert",
+      "cardinality": "many_to_one",
+      "description": "Many endorsements can be authored by the same industry expert."
+    },
+    {
+      "sourceContentType": "DancingGoat.Endorsement",
+      "sourceField": "product",
+      "targetContentType": "DancingGoat.Product",
+      "cardinality": "many_to_one",
+      "description": "Many endorsements can be linked to the same product."
+    },
+    {
+      "sourceContentType": "DancingGoat.ProductPage",
+      "sourceField": "product",
+      "targetContentType": "DancingGoat.Product",
+      "cardinality": "one_to_one",
+      "description": "Each product page references one reusable product item."
+    }
+  ],
+  "pageBuilder": {
+    "templates": [
+      {
+        "identifier": "DancingGoat.LandingPage",
+        "name": "Landing Page",
+        "description": "Default landing page template to host Page Builder content; endorsement widgets defined later.",
+        "allowedSections": [],
+        "allowedWidgets": []
+      }
+    ],
+    "sections": [],
+    "widgets": []
+  }
+}
