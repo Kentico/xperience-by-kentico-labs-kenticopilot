@@ -3,6 +3,10 @@
 		"kentico-docs-mcp": {
 			"type": "http",
 			"url": "https://docs.kentico.com/mcp"
+		},
+		"kentico-cm-mcp": {
+			"type": "http",
+			"url": "https://ai.kentico.com/content-model-mcp"
 		}
 	},
 	"inputs": []
