@@ -1,0 +1,3 @@
+# Endorsement widget requirements
+
+-
