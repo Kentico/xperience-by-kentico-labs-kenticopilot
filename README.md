@@ -8,7 +8,7 @@
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Install Kentico's content modeling MCP server into my project, using VS Code configuration syntax
    ```
 
@@ -16,7 +16,7 @@
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Enable Xperience's content management API in the DancingGoat project. Use the default configuration. This is a prerelease package so find the correct package version that matches this project's Xperience version.
    ```
 
@@ -24,7 +24,7 @@
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Configure Xperience's management API MCP server for this project. Use the VS Code configuration.
    ```
 
@@ -45,7 +45,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    /mcp.kentico-cm-mcp.start_content_modeling
 
    Dancing Goat cafe, high-end coffee and coffee accessories online retailer featuring articles for coffee enthusiasts.
@@ -81,7 +81,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Use the provided content model plan and the xperience-management-api MCP server to create new content types.
 
    Notes:
@@ -95,7 +95,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Regenerate the reusable content type classes
    ```
 
@@ -110,7 +110,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    /widget-create-research
 
    For the requirements described in: .agent-resources/endorsements/requirements.md
@@ -120,7 +120,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    /widget-create-implementation
 
    Follow instructions in: .agent-resources/endorsements/ENDORSEMENT.instructions.md
@@ -136,7 +136,7 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   ```
+   ```markdown
    Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model
 
    the endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
