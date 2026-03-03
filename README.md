@@ -8,19 +8,25 @@
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Install Kentico's content modeling MCP server into my project, using VS Code configuration syntax
+   ```
+   Install Kentico's content modeling MCP server into my project, using VS Code configuration syntax
+   ```
 
 1. [Enable the management API](https://docs.kentico.com/documentation/developers-and-admins/development/content-types/management-api#enable-the-management-api)
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Enable Xperience's content management API in the DancingGoat project. Use the default configuration. This is a prerelease package so find the correct package version that matches this project's Xperience version.
+   ```
+   Enable Xperience's content management API in the DancingGoat project. Use the default configuration. This is a prerelease package so find the correct package version that matches this project's Xperience version.
+   ```
 
 1. [Configure the management API MCP server](https://docs.kentico.com/documentation/developers-and-admins/development/content-types/management-api#management-api-mcp-server)
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Configure Xperience's management API MCP server for this project. Use the VS Code configuration.
+   ```
+   Configure Xperience's management API MCP server for this project. Use the VS Code configuration.
+   ```
 
 ## AI assisted Content modeling
 
@@ -39,24 +45,26 @@ We will provide context explaining we will enhance an existing content model. Th
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > /mcp.kentico-cm-mcp.start_content_modeling
-   >
-   > Dancing Goat cafe, high-end coffee and coffee accessories online retailer featuring articles for coffee enthusiasts.
-   >
-   > We need to enhance our existing content model.
-   >
-   > We want to add 2 new content models: 1. An "Industry Expert" who is a person recognized in coffee enthusiast communities with a valued opinion of coffee-related products and services. 2. An "Endorsement" of a product (e.g. coffee, grinder) from a specific "Industry Expert" with some details about the product being endorsed.
-   >
-   > We want to use this content across our website and email channels. These endorsements will be programmatically displayed on existing non-Page Builder product landing pages and will added to landing pages using the Page Builder widgets. We also want to display them in our marketing emails promoting products using the Email Builder. However, we don't need to define those widgets in this process.
-   >
-   > Notes:
-   >
-   > - Any linked images should use the existing DancingGoat.Image content type.
-   > - Products are reusable content linked to the web pages that display them. They already exist in the content model. The following are the available content types for products and they are all valid for endorsement: DancingGoat.ProductCoffee, DancingGoat.ProductGrinder, DancingGoat.ProductBrewer, DancingGoat.ProductAccessory, DancingGoat.ProductTemplateAlphaSize
-   > - Product page types are named DancingGoat.ProductPage
-   > - Landing page types are named DancingGoat.LandingPage
-   > - The Landing page type has a template named DancingGoat.LandingPageSingleColumn
-   > - Always use the kentico-docs-mcp MCP server to find the best practices for content type naming conventions.
+   ```
+   /mcp.kentico-cm-mcp.start_content_modeling
+
+   Dancing Goat cafe, high-end coffee and coffee accessories online retailer featuring articles for coffee enthusiasts.
+
+   We need to enhance our existing content model.
+
+   We want to add 2 new content models: 1. An "Industry Expert" who is a person recognized in coffee enthusiast communities with a valued opinion of coffee-related products and services. 2. An "Endorsement" of a product (e.g. coffee, grinder) from a specific "Industry Expert" with some details about the product being endorsed.
+
+   We want to use this content across our website and email channels. These endorsements will be programmatically displayed on existing non-Page Builder product landing pages and will added to landing pages using the Page Builder widgets. We also want to display them in our marketing emails promoting products using the Email Builder. However, we don't need to define those widgets in this process.
+
+   Notes:
+
+   - Any linked images should use the existing DancingGoat.Image content type.
+   - Products are reusable content linked to the web pages that display them. They already exist in the content model. The following are the available content types for products and they are all valid for endorsement: DancingGoat.ProductCoffee, DancingGoat.ProductGrinder, DancingGoat.ProductBrewer, DancingGoat.ProductAccessory, DancingGoat.ProductTemplateAlphaSize
+   - Product page types are named DancingGoat.ProductPage
+   - Landing page types are named DancingGoat.LandingPage
+   - The Landing page type has a template named DancingGoat.LandingPageSingleColumn
+   - Always use the kentico-docs-mcp MCP server to find the best practices for content type naming conventions.
+   ```
 
 1. Allow the `content_modeling_validate_requirements` tool to run
 1. Allow the `content_modeling_validate_content_types` tool to run. The agent might iterate on this process until the validation passes.
@@ -71,21 +79,25 @@ We will provide context explaining we will enhance an existing content model. Th
 
    **Note**: Ensure the MCP server is running and the tools are enabled for the agent session
 
-   💡 <span style="color: #3fb950">**Agent prompt**</span>
+   💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Use the provided content model plan and the xperience-management-api MCP server to create new content types.
-   >
-   > Notes:
-   >
-   > - Required `contentitemreference` should not set `required: true` at the field level, but instead have a minimum number of linked items of 1.
-   > - Do not apply validation rules to any of the fields.
+   ```
+   Use the provided content model plan and the xperience-management-api MCP server to create new content types.
+
+   Notes:
+
+   - Required `contentitemreference` should not set `required: true` at the field level, but instead have a minimum number of linked items of 1.
+   - Do not apply validation rules to any of the fields.
+   ```
 
 1. Apply or skip any suggested content type refinements
 1. Request the agent generate content type C# classes using the DancingGoat `README.md`.
 
-   💡 <span style="color: #3fb950">**Agent prompt**</span>
+   💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Regenerate the reusable content type classes
+   ```
+   Regenerate the reusable content type classes
+   ```
 
 ## Agent-driven widget code generation
 
@@ -96,19 +108,23 @@ We will provide context explaining we will enhance an existing content model. Th
    - **Note**: this will be simpler in the future with AI plugins in VS Code (already available in Claude Code and Cursor)
 1. Request the agent to perform research for the widget you want to generate
 
-   💡 <span style="color: #3fb950">**Agent prompt**</span>
+   💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > /widget-create-research
-   >
-   > For the requirements described in: .agent-resources/endorsements/requirements.md
+   ```
+   /widget-create-research
+
+   For the requirements described in: .agent-resources/endorsements/requirements.md
+   ```
 
 1. Request the agent write the widget code using the newly generated instructions
 
-   💡 <span style="color: #3fb950">**Agent prompt**</span>
+   💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > /widget-create-implementation
-   >
-   > Follow instructions in: .agent-resources/endorsements/ENDORSEMENT.instructions.md
+   ```
+   /widget-create-implementation
+
+   Follow instructions in: .agent-resources/endorsements/ENDORSEMENT.instructions.md
+   ```
 
 ## (optional) Generate widget templates with AI
 
@@ -118,13 +134,15 @@ We will provide context explaining we will enhance an existing content model. Th
    - `_ProductCardWidget.cshtml`
    - `_DancingGoat_LandingPage_TestimonialWidget.cshtml`
 
-   💡 <span style="color: #3fb950">**Agent prompt**</span>
+   💡 ${\color{lightgreen}Agent \space prompt}$
 
-   > Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model
-   >
-   > the endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
-   >
-   > it's like a testimonial but used to drive purchases of specific products based on the persona-appeal of the endorser.
-   >
-   > Only use HTML, CSS, or JavaScript - no C# or Razor.
-   > Store this artifact in `./agent-resources/endorsements`
+   ```
+   Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model
+
+   the endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
+
+   it's like a testimonial but used to drive purchases of specific products based on the persona-appeal of the endorser.
+
+   Only use HTML, CSS, or JavaScript - no C# or Razor.
+   Store this artifact in `./agent-resources/endorsements`
+   ```
