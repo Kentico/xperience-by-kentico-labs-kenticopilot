@@ -6,20 +6,20 @@
 1. Start the Docs MCP server (if not already started)
 1. [Install Content modeling MCP server](https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-mcp#install-the-mcp-server)
 
-   > 💡 ${\color{lightgreen}Agent \space prompt}$
-   >
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
    > Install Kentico's content modeling MCP server into my project, using VS Code configuration syntax
 
 1. [Enable the management API](https://docs.kentico.com/documentation/developers-and-admins/development/content-types/management-api#enable-the-management-api)
 
-   > 💡 ${\color{lightgreen}Agent \space prompt}$
-   >
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
    > Enable Xperience's content management API in the DancingGoat project. Use the default configuration. This is a prerelease package so find the correct package version that matches this project's Xperience version.
 
 1. [Configure the management API MCP server](https://docs.kentico.com/documentation/developers-and-admins/development/content-types/management-api#management-api-mcp-server)
 
-   > 💡 ${\color{lightgreen}Agent \space prompt}$
-   >
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
    > Configure Xperience's management API MCP server for this project. Use the VS Code configuration.
 
 ## AI assisted Content modeling
@@ -37,8 +37,8 @@ We will provide context explaining we will enhance an existing content model. Th
 1. Start the content modeling MCP server
 1. Run the [Start content modeling](https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-mcp#getting-started) workflow via prompt
 
-   > 💡 ${\color{lightgreen}Agent \space prompt}$
-   >
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
    > /mcp.kentico-cm-mcp.start_content_modeling
    >
    > Dancing Goat cafe, high-end coffee and coffee accessories online retailer featuring articles for coffee enthusiasts.
@@ -71,8 +71,8 @@ We will provide context explaining we will enhance an existing content model. Th
 
    **Note**: Ensure the MCP server is running and the tools are enabled for the agent session
 
-   > 💡 <span style="color: #3fb950">**Agent prompt**</span>
-   >
+   💡 <span style="color: #3fb950">**Agent prompt**</span>
+
    > Use the provided content model plan and the xperience-management-api MCP server to create new content types.
    >
    > Notes:
@@ -83,8 +83,8 @@ We will provide context explaining we will enhance an existing content model. Th
 1. Apply or skip any suggested content type refinements
 1. Request the agent generate content type C# classes using the DancingGoat `README.md`.
 
-   > 💡 <span style="color: #3fb950">**Agent prompt**</span>
-   >
+   💡 <span style="color: #3fb950">**Agent prompt**</span>
+
    > Regenerate the reusable content type classes
 
 ## Agent-driven widget code generation
@@ -96,16 +96,16 @@ We will provide context explaining we will enhance an existing content model. Th
    - **Note**: this will be simpler in the future with AI plugins in VS Code (already available in Claude Code and Cursor)
 1. Request the agent to perform research for the widget you want to generate
 
-   > 💡 <span style="color: #3fb950">**Agent prompt**</span>
-   >
+   💡 <span style="color: #3fb950">**Agent prompt**</span>
+
    > /widget-create-research
    >
    > For the requirements described in: .agent-resources/endorsements/requirements.md
 
 1. Request the agent write the widget code using the newly generated instructions
 
-   > 💡 <span style="color: #3fb950">**Agent prompt**</span>
-   >
+   💡 <span style="color: #3fb950">**Agent prompt**</span>
+
    > /widget-create-implementation
    >
    > Follow instructions in: .agent-resources/endorsements/ENDORSEMENT.instructions.md
@@ -118,8 +118,8 @@ We will provide context explaining we will enhance an existing content model. Th
    - `_ProductCardWidget.cshtml`
    - `_DancingGoat_LandingPage_TestimonialWidget.cshtml`
 
-   > 💡 <span style="color: #3fb950">**Agent prompt**</span>
-   >
+   💡 <span style="color: #3fb950">**Agent prompt**</span>
+
    > Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model
    >
    > the endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
