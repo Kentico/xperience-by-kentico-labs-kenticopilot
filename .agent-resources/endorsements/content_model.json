@@ -1,193 +1,229 @@
 {
   "metadata": {
-    "generatedAt": "2026-02-12",
-    "version": "1.0",
-    "source": "kentico-cm-mcp"
+    "project": "Dancing Goat - Industry Expert & Endorsement Content Model",
+    "version": "1.0.0",
+    "createdDate": "2026-03-02",
+    "approach": "ATOMIC",
+    "channels": ["website", "email"],
+    "scope": "Enhancement to existing content model - adds 2 new reusable content types"
   },
   "requirements": {
-    "approach": "PAGE-BUILDER",
+    "projectDescription": "Dancing Goat is a high-end coffee and coffee accessories online retailer with an existing Xperience by Kentico content model. We need to add 2 new reusable content types: Industry Expert and Endorsement.",
+    "approach": "ATOMIC",
     "channels": ["website", "email"],
+    "teamExperience": "intermediate",
+    "contentVolume": "medium",
     "contentReuse": "extensive"
   },
   "contentTypes": [
     {
-      "name": "DancingGoat.ProductPage",
-      "displayName": "Product Page",
-      "description": "Existing page type included for validation; links a page to a reusable product item.",
-      "type": "content",
-      "useFor": "Pages",
-      "fields": [
-        {
-          "name": "product",
-          "displayName": "Product",
-          "dataType": "content_item",
-          "required": true,
-          "allowedContentTypes": ["DancingGoat.Product"],
-          "maxItems": 1
-        }
-      ]
-    },
-    {
-      "name": "DancingGoat.Product",
-      "displayName": "Product",
-      "description": "Existing reusable product item (placeholder for current model).",
-      "type": "content",
-      "fields": []
-    },
-    {
-      "name": "DancingGoat.IndustryExpert",
+      "name": "IndustryExpert",
       "displayName": "Industry Expert",
-      "description": "Person recognized in coffee enthusiast communities whose opinions are used in endorsements.",
-      "type": "content",
+      "codeName": "DancingGoat.IndustryExpert",
+      "useFor": "ReusableContent",
+      "description": "A person recognized in coffee enthusiast communities with a valued opinion on coffee-related products and services.",
       "fields": [
         {
-          "name": "fullName",
-          "displayName": "Full name",
+          "name": "IndustryExpertName",
+          "caption": "Name",
           "dataType": "text",
+          "formComponent": "TextInput",
           "required": true,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "Full name of the industry expert."
         },
         {
-          "name": "title",
-          "displayName": "Title",
+          "name": "IndustryExpertTitle",
+          "caption": "Title",
           "dataType": "text",
+          "formComponent": "TextInput",
           "required": false,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "Professional title or role (e.g., Master Barista, Coffee Critic, Head Roaster)."
         },
         {
-          "name": "organization",
-          "displayName": "Organization",
+          "name": "IndustryExpertPhoto",
+          "caption": "Photo",
+          "dataType": "contentitemreference",
+          "formComponent": "ContentItemSelector",
+          "required": false,
+          "allowedContentTypes": ["DancingGoat.Image"],
+          "maxItems": 1,
+          "description": "Profile photo of the expert. Uses the existing DancingGoat.Image content type."
+        },
+        {
+          "name": "IndustryExpertBio",
+          "caption": "Biography",
+          "dataType": "longtext",
+          "formComponent": "RichTextEditor",
+          "required": false,
+          "description": "Short biography describing the expert's background and credentials in the coffee world."
+        },
+        {
+          "name": "IndustryExpertWebsiteUrl",
+          "caption": "Website URL",
           "dataType": "text",
+          "formComponent": "TextInput",
           "required": false,
-          "maxLength": 200
-        },
-        {
-          "name": "bio",
-          "displayName": "Short bio",
-          "dataType": "rich_text",
-          "required": false
-        },
-        {
-          "name": "photo",
-          "displayName": "Photo",
-          "dataType": "asset",
-          "required": false,
-          "allowedExtensions": ["jpg", "jpeg", "png", "webp"],
-          "maxAssets": 1
-        },
-        {
-          "name": "websiteUrl",
-          "displayName": "Website URL",
-          "dataType": "url",
-          "required": false
+          "maxLength": 500,
+          "description": "Personal website or primary social media profile URL."
         }
       ]
     },
     {
-      "name": "DancingGoat.Endorsement",
+      "name": "Endorsement",
       "displayName": "Endorsement",
-      "description": "Endorsement of a product by an Industry Expert with details used on product pages, landing pages, and emails.",
-      "type": "content",
+      "codeName": "DancingGoat.Endorsement",
+      "useFor": "ReusableContent",
+      "description": "An endorsement of a coffee product or accessory from a specific Industry Expert, suitable for display on product landing pages, in Page Builder widgets, and in marketing emails.",
       "fields": [
         {
-          "name": "title",
-          "displayName": "Title",
-          "dataType": "text",
-          "required": true,
-          "maxLength": 200
-        },
-        {
-          "name": "expert",
-          "displayName": "Industry expert",
-          "dataType": "content_item",
+          "name": "EndorsementExpert",
+          "caption": "Industry Expert",
+          "dataType": "contentitemreference",
+          "formComponent": "ContentItemSelector",
           "required": true,
           "allowedContentTypes": ["DancingGoat.IndustryExpert"],
-          "maxItems": 1
+          "maxItems": 1,
+          "description": "The industry expert providing this endorsement."
         },
         {
-          "name": "product",
-          "displayName": "Endorsed product",
-          "dataType": "content_item",
+          "name": "EndorsementProduct",
+          "caption": "Endorsed Product",
+          "dataType": "contentitemreference",
+          "formComponent": "ContentItemSelector",
           "required": true,
-          "allowedContentTypes": ["DancingGoat.Product"],
-          "maxItems": 1
+          "allowedContentTypes": [
+            "DancingGoat.ProductCoffee",
+            "DancingGoat.ProductGrinder",
+            "DancingGoat.ProductBrewer",
+            "DancingGoat.ProductAccessory",
+            "DancingGoat.ProductTemplateAlphaSize"
+          ],
+          "maxItems": 1,
+          "description": "The product being endorsed. Any existing Dancing Goat product content type is valid."
         },
         {
-          "name": "summaryQuote",
-          "displayName": "Summary quote",
-          "dataType": "text",
+          "name": "EndorsementQuote",
+          "caption": "Endorsement Quote",
+          "dataType": "longtext",
+          "formComponent": "TextArea",
           "required": true,
-          "maxLength": 280
+          "maxLength": 1000,
+          "description": "The expert's endorsement statement or quote about the product. Keep concise for widget and email display."
         },
         {
-          "name": "details",
-          "displayName": "Details",
-          "dataType": "rich_text",
-          "required": false
-        },
-        {
-          "name": "rating",
-          "displayName": "Rating",
-          "dataType": "number",
+          "name": "EndorsementRating",
+          "caption": "Rating",
+          "dataType": "integer",
+          "formComponent": "NumberInput",
           "required": false,
           "minValue": 1,
           "maxValue": 5,
-          "precision": 1
+          "description": "Optional star rating from 1 to 5 given by the expert."
         },
         {
-          "name": "endorsedOn",
-          "displayName": "Endorsed on",
-          "dataType": "date_time",
-          "required": false
-        },
-        {
-          "name": "image",
-          "displayName": "Image",
-          "dataType": "asset",
+          "name": "EndorsementDate",
+          "caption": "Endorsement Date",
+          "dataType": "date",
+          "formComponent": "DateInput",
           "required": false,
-          "allowedExtensions": ["jpg", "jpeg", "png", "webp"],
-          "maxAssets": 1
-        },
-        {
-          "name": "featured",
-          "displayName": "Featured",
-          "dataType": "boolean",
-          "required": false
+          "description": "Date the endorsement was given or published."
         }
       ]
+    },
+    {
+      "name": "ProductPage",
+      "displayName": "Product Page",
+      "codeName": "DancingGoat.ProductPage",
+      "useFor": "Pages",
+      "existing": true,
+      "description": "Existing page content type for product detail pages. Endorsements are displayed programmatically on these pages.",
+      "fields": []
+    },
+    {
+      "name": "LandingPage",
+      "displayName": "Landing Page",
+      "codeName": "DancingGoat.LandingPage",
+      "useFor": "Pages",
+      "existing": true,
+      "description": "Existing landing page content type with Page Builder support. Endorsement widgets will be added to pages using this type.",
+      "fields": []
     }
   ],
   "relationships": [
     {
-      "sourceContentType": "DancingGoat.Endorsement",
-      "sourceField": "expert",
-      "targetContentType": "DancingGoat.IndustryExpert",
-      "cardinality": "many_to_one",
-      "description": "Many endorsements can be authored by the same industry expert."
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.IndustryExpert",
+      "field": "EndorsementExpert",
+      "cardinality": "many-to-one",
+      "description": "Many endorsements can be given by one industry expert. Each endorsement references exactly one expert."
     },
     {
-      "sourceContentType": "DancingGoat.Endorsement",
-      "sourceField": "product",
-      "targetContentType": "DancingGoat.Product",
-      "cardinality": "many_to_one",
-      "description": "Many endorsements can be linked to the same product."
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.ProductCoffee",
+      "field": "EndorsementProduct",
+      "cardinality": "many-to-one",
+      "description": "Endorsements can reference a coffee product (DancingGoat.ProductCoffee)."
     },
     {
-      "sourceContentType": "DancingGoat.ProductPage",
-      "sourceField": "product",
-      "targetContentType": "DancingGoat.Product",
-      "cardinality": "one_to_one",
-      "description": "Each product page references one reusable product item."
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.ProductGrinder",
+      "field": "EndorsementProduct",
+      "cardinality": "many-to-one",
+      "description": "Endorsements can reference a grinder product (DancingGoat.ProductGrinder)."
+    },
+    {
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.ProductBrewer",
+      "field": "EndorsementProduct",
+      "cardinality": "many-to-one",
+      "description": "Endorsements can reference a brewer product (DancingGoat.ProductBrewer)."
+    },
+    {
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.ProductAccessory",
+      "field": "EndorsementProduct",
+      "cardinality": "many-to-one",
+      "description": "Endorsements can reference an accessory product (DancingGoat.ProductAccessory)."
+    },
+    {
+      "from": "DancingGoat.Endorsement",
+      "to": "DancingGoat.ProductTemplateAlphaSize",
+      "field": "EndorsementProduct",
+      "cardinality": "many-to-one",
+      "description": "Endorsements can reference a product using the alpha-size template (DancingGoat.ProductTemplateAlphaSize)."
+    },
+    {
+      "from": "DancingGoat.IndustryExpert",
+      "to": "DancingGoat.Image",
+      "field": "IndustryExpertPhoto",
+      "cardinality": "many-to-one",
+      "description": "Industry experts reference an existing DancingGoat.Image content item for their profile photo."
+    },
+    {
+      "from": "DancingGoat.ProductPage",
+      "to": "DancingGoat.Endorsement",
+      "cardinality": "one-to-many",
+      "description": "Existing product pages programmatically query and display endorsements for the featured product at runtime (no direct field link on the page type)."
+    },
+    {
+      "from": "DancingGoat.LandingPage",
+      "to": "DancingGoat.Endorsement",
+      "cardinality": "one-to-many",
+      "description": "Landing pages display endorsements via future Page Builder widgets that select Endorsement reusable content items."
     }
   ],
   "pageBuilder": {
+    "note": "Page Builder widgets for Endorsement display are planned but not in scope for this content modeling phase. Future implementation will add widget(s) that allow editors to select and display Endorsement items on LandingPage content types.",
     "templates": [
       {
-        "identifier": "DancingGoat.LandingPage",
-        "name": "Landing Page",
-        "description": "Default landing page template to host Page Builder content; endorsement widgets defined later.",
-        "allowedSections": [],
-        "allowedWidgets": []
+        "name": "LandingPageTemplate",
+        "displayName": "Landing Page Template",
+        "identifier": "DancingGoat.LandingPageTemplate",
+        "existing": true,
+        "description": "Existing Landing Page template. Future Endorsement widgets will be placed on pages using this template.",
+        "supportedSections": []
       }
     ],
     "sections": [],
