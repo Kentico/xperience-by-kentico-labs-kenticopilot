@@ -25,7 +25,7 @@
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
-   Configure Xperience's management API MCP server for this project. Use the VS Code configuration.
+   Configure Xperience's management API MCP server for this project. Use the VS Code configuration syntax.
    ```
 
 ## AI assisted Content modeling
@@ -52,14 +52,24 @@ We will provide context explaining we will enhance an existing content model. Th
 
    We need to enhance our existing content model.
 
-   We want to add 2 new content models: 1. An "Industry Expert" who is a person recognized in coffee enthusiast communities with a valued opinion of coffee-related products and services. 2. An "Endorsement" of a product (e.g. coffee, grinder) from a specific "Industry Expert" with some details about the product being endorsed.
+   We want to add 2 new content models:
 
-   We want to use this content across our website and email channels. These endorsements will be programmatically displayed on existing non-Page Builder product landing pages and will added to landing pages using the Page Builder widgets. We also want to display them in our marketing emails promoting products using the Email Builder. However, we don't need to define those widgets in this process.
+   1.  An "Industry Expert" who is a person recognized in coffee enthusiast communities with a valued opinion of coffee-related products and services.
+   2.  An "Endorsement" of a product (e.g. coffee, grinder) from a specific "Industry Expert" with some details about the product being endorsed.
+
+   We want to use this content across our website and email channels.
+   These endorsements will be programmatically displayed on existing non-Page Builder product landing pages and will added to landing pages using the Page Builder widgets.
+   We also want to display them in our marketing emails promoting products using the Email Builder. However, we don't need to define those widgets in this process.
 
    Notes:
 
    - Any linked images should use the existing DancingGoat.Image content type.
-   - Products are reusable content linked to the web pages that display them. They already exist in the content model. The following are the available content types for products and they are all valid for endorsement: DancingGoat.ProductCoffee, DancingGoat.ProductGrinder, DancingGoat.ProductBrewer, DancingGoat.ProductAccessory, DancingGoat.ProductTemplateAlphaSize
+   - Products are reusable content linked to the web pages that display them. They already exist in the content model. The following are the available content types for products and they are all valid for endorsement:
+     - DancingGoat.ProductCoffee
+     - DancingGoat.ProductGrinder
+     - DancingGoat.ProductBrewer
+     - DancingGoat.ProductAccessory
+     - DancingGoat.ProductTemplateAlphaSize
    - Product page types are named DancingGoat.ProductPage
    - Landing page types are named DancingGoat.LandingPage
    - The Landing page type has a template named DancingGoat.LandingPageSingleColumn
@@ -120,6 +130,8 @@ We will provide context explaining we will enhance an existing content model. Th
    https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/main/src/widget-creation/gh-copilot/.github
    ```
 
+   In the near future you will be able to use plugins and a Kentico plugin marketplace to easily install the tools
+
 1. Request the agent to perform research for the widget you want to generate
 
    💡 ${\color{lightgreen}Agent \space prompt}$
@@ -147,11 +159,11 @@ We will provide context explaining we will enhance an existing content model. Th
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
-   Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model
+   Using this project's css rules and some example components like the product card and testimonial, generate 3 variations of a design.html file that represents a well designed component for the Endorsement data model.
 
-   the endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
+   The endorsement is supposed to feature an industry expert who is promoted a specific Dancing Goat product.
 
-   it's like a testimonial but used to drive purchases of specific products based on the persona-appeal of the endorser.
+   It's like a testimonial but used to drive purchases of specific products based on the persona-appeal of the endorser.
 
    Only use HTML, CSS, or JavaScript - no C# or Razor.
    Store this artifact in `./agent-resources/endorsements`
