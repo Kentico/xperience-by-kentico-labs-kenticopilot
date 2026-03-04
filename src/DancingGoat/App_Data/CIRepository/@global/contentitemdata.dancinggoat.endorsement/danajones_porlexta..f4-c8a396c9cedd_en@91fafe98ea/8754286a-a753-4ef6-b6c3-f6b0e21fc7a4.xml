@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentitemdata.dancinggoat.endorsement>
+  <ContentItemDataCommonDataID>
+    <GUID>3927c369-ad7f-45a3-98f4-c8a396c9cedd</GUID>
+    <ObjectType>cms.contentitemcommondata</ObjectType>
+    <Parent>
+      <CodeName>DanaJones_PorlexTallCeramicBurrGrinder-k4asd0w9</CodeName>
+      <GUID>30f2530b-64f7-4132-9e84-8f8d8c819788</GUID>
+      <ObjectType>cms.contentitem</ObjectType>
+    </Parent>
+  </ContentItemDataCommonDataID>
+  <ContentItemDataGUID>8754286a-a753-4ef6-b6c3-f6b0e21fc7a4</ContentItemDataGUID>
+  <EndorsementDate>2026-03-03 05:00:00Z</EndorsementDate>
+  <EndorsementExpert>
+    <![CDATA[[{"Identifier":"a67ef91c-23d9-4817-8437-36a25d222ff6"}]]]>
+  </EndorsementExpert>
+  <EndorsementProduct>
+    <![CDATA[[{"Identifier":"9e067ec4-850b-4020-82d2-ede11ea21bc0"}]]]>
+  </EndorsementProduct>
+  <EndorsementQuote>
+    <![CDATA[The Porlex Tall is one of those grinders that punches above its weight. The ceramic burrs produce a surprisingly consistent grind for a manual grinder, which is essential if you want balanced extraction. I also like the larger capacity compared to smaller travel grinders—it’s enough for a couple cups without sacrificing portability. For anyone who values fresh coffee at home or on the road, it’s a simple, durable tool that just works]]>
+  </EndorsementQuote>
+  <EndorsementRating>4</EndorsementRating>
+</contentitemdata.dancinggoat.endorsement>

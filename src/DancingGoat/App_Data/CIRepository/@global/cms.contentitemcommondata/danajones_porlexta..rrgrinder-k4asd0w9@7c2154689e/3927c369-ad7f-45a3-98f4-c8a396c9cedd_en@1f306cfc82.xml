@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cms.contentitemcommondata>
+  <ContentItemCommonDataContentItemID>
+    <CodeName>DanaJones_PorlexTallCeramicBurrGrinder-k4asd0w9</CodeName>
+    <GUID>30f2530b-64f7-4132-9e84-8f8d8c819788</GUID>
+    <ObjectType>cms.contentitem</ObjectType>
+  </ContentItemCommonDataContentItemID>
+  <ContentItemCommonDataContentLanguageID>
+    <CodeName>en</CodeName>
+    <GUID>e4a8fb12-ebc2-45d0-930f-c9fba2780c85</GUID>
+    <ObjectType>cms.contentlanguage</ObjectType>
+  </ContentItemCommonDataContentLanguageID>
+  <ContentItemCommonDataFirstPublishedWhen>2026-03-04 04:53:06Z</ContentItemCommonDataFirstPublishedWhen>
+  <ContentItemCommonDataGUID>3927c369-ad7f-45a3-98f4-c8a396c9cedd</ContentItemCommonDataGUID>
+  <ContentItemCommonDataIsLatest>True</ContentItemCommonDataIsLatest>
+  <ContentItemCommonDataLastPublishedWhen>2026-03-04 04:53:06Z</ContentItemCommonDataLastPublishedWhen>
+  <ContentItemCommonDataVersionStatus>2</ContentItemCommonDataVersionStatus>
+  <ContentItemReferences>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>9556d99a-0cb3-480d-b09a-2f204da83e24</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>b401bc4a-3c66-45a6-8b65-5a94625e9c5c</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>3927c369-ad7f-45a3-98f4-c8a396c9cedd</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>PorlexTallCeramicBurrGrinder-53y9sg4n</CodeName>
+        <GUID>9e067ec4-850b-4020-82d2-ede11ea21bc0</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+    <cms.contentitemreference>
+      <ContentItemReferenceGroupGUID>3f6950ba-ed50-44c7-a655-b8950e75f144</ContentItemReferenceGroupGUID>
+      <ContentItemReferenceGUID>51589a58-c7d3-460c-99b7-f6a50d7033d4</ContentItemReferenceGUID>
+      <ContentItemReferenceSourceCommonDataID>
+        <GUID>3927c369-ad7f-45a3-98f4-c8a396c9cedd</GUID>
+        <ObjectType>cms.contentitemcommondata</ObjectType>
+      </ContentItemReferenceSourceCommonDataID>
+      <ContentItemReferenceTargetItemID>
+        <CodeName>DanaJones-p4zu4iw3</CodeName>
+        <GUID>a67ef91c-23d9-4817-8437-36a25d222ff6</GUID>
+        <ObjectType>cms.contentitem</ObjectType>
+      </ContentItemReferenceTargetItemID>
+    </cms.contentitemreference>
+  </ContentItemReferences>
+</cms.contentitemcommondata>
