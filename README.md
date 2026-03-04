@@ -156,3 +156,7 @@ We will provide context explaining we will enhance an existing content model. Th
    Only use HTML, CSS, or JavaScript - no C# or Razor.
    Store this artifact in `./agent-resources/endorsements`
    ```
+
+## Coffee Samples Page
+
+![Screenshot of the Coffee Samples page](./images/coffee-samples-screenshot.png)
