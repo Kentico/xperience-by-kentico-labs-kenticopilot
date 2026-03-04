@@ -1,0 +1,10 @@
+Name
+Dana Jones
+Title
+Coffee Educator
+Bio
+Trains baristas or speaks about coffee sourcing, roasting, and tasting.
+Website URL
+https://chatgpt.com/c/69a7b813-27c0-8325-9538
+Specialties
+[]
