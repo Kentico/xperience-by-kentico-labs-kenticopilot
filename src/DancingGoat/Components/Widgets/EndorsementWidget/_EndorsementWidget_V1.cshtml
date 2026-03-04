@@ -1,0 +1,79 @@
+@using DancingGoat.Widgets
+@model EndorsementWidgetViewModel
+
+@if (string.IsNullOrEmpty(Model?.EndorsementQuote))
+{
+    if (Context.Kentico().PageBuilder().EditMode)
+    {
+        <div class="widget-configure-message">
+            <p>Please select an endorsement to display.</p>
+        </div>
+    }
+    return;
+}
+
+<div class="section-wrap">
+    <div class="v1-endorsement">
+
+        <!-- LEFT: Expert Identity Column -->
+        <div class="v1-expert">
+            @if (Model.ShowExpertPhoto && !string.IsNullOrEmpty(Model.ExpertPhotoUrl))
+            {
+                <img src="@Url.Content(Model.ExpertPhotoUrl)" alt="@Model.ExpertName" />
+            }
+            @if (!string.IsNullOrEmpty(Model.ExpertName))
+            {
+                <div class="v1-expert-name">@Model.ExpertName</div>
+            }
+            @if (!string.IsNullOrEmpty(Model.ExpertTitle))
+            {
+                <div class="v1-expert-title">@Model.ExpertTitle</div>
+            }
+            @if (Model.ShowExpertBio && !string.IsNullOrEmpty(Model.ExpertBio))
+            {
+                <div class="v1-expert-bio">@Html.Raw(Model.ExpertBio)</div>
+            }
+            @if (Model.ShowExpertWebUrl && !string.IsNullOrEmpty(Model.ExpertWebUrl))
+            {
+                <a class="v1-expert-link" href="@Model.ExpertWebUrl" target="_blank" rel="noopener">@Model.ExpertWebUrl ↗</a>
+            }
+        </div>
+
+        <!-- RIGHT: Quote + Product Panel -->
+        <div class="v1-content">
+            <div class="v1-quote">
+                "@Model.EndorsementQuote"
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ProductName))
+            {
+                <div class="v1-product">
+                    @if (!string.IsNullOrEmpty(Model.ProductImageUrl))
+                    {
+                        <img src="@Url.Content(Model.ProductImageUrl)" alt="@Model.ProductName" />
+                    }
+                    <div class="v1-product-info">
+                        <div class="v1-product-label">Featured Product</div>
+                        <div class="v1-product-name">@Model.ProductName</div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.ProductPageUrl))
+                    {
+                        <a class="btn-cta" href="@Url.Content(Model.ProductPageUrl)">Shop Now</a>
+                    }
+                </div>
+            }
+
+            <div class="v1-footer">
+                @if (Model.ShowRating)
+                {
+                    <div class="star-rating">@(new string('★', Model.EndorsementRating))</div>
+                }
+                @if (Model.ShowDate)
+                {
+                    <div class="v1-meta">Reviewed @Model.EndorsementDate.ToString("MMMM yyyy")</div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

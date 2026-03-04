@@ -4897,3 +4897,375 @@ footer .footer-container {
     margin-bottom: 3rem;
   }
 }
+
+/*# Endorsement widget – palette tokens #*/
+:root {
+  --c-espresso:  #272219;
+  --c-gold:      #846331;
+  --c-mid-brown: #494132;
+  --c-link-gold: #B49669;
+  --c-white:     #ffffff;
+  --c-bg:        #F4F1EC;
+  --c-star:      #B49669;
+}
+
+/*# Endorsement shared helpers #*/
+.btn-cta {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background-color: var(--c-espresso);
+  color: var(--c-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.875rem;
+  line-height: 2.14286;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-cta:hover { background: rgba(39, 34, 25, 0.8); color: var(--c-white); text-decoration: none; }
+
+.star-rating { color: var(--c-star); font-size: 1.1rem; letter-spacing: 2px; }
+
+/*# Endorsement widget – configure placeholder #*/
+.widget-configure-message {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/*# Endorsement widget – VARIATION 1: Expert Spotlight #*/
+.v1-endorsement {
+  background-color: var(--c-espresso);
+  color: var(--c-white);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.v1-endorsement::before {
+  content: "\201C";
+  position: absolute;
+  right: -20px;
+  top: -80px;
+  font-size: 380px;
+  line-height: 1;
+  color: var(--c-white);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.v1-expert {
+  flex: 0 0 280px;
+  background: var(--c-mid-brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  gap: 0.8rem;
+}
+.v1-expert img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--c-link-gold);
+}
+.v1-expert-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-white);
+  margin-top: 0.5rem;
+}
+.v1-expert-title {
+  font-size: 0.85rem;
+  color: var(--c-link-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.v1-expert-bio {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-top: 0.4rem;
+}
+.v1-expert-link {
+  font-size: 0.78rem;
+  color: var(--c-link-gold);
+  letter-spacing: 1px;
+}
+.v1-content {
+  flex: 1 1 300px;
+  padding: 3rem 3.5rem 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  position: relative;
+}
+.v1-quote {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--c-white);
+  font-style: italic;
+}
+.v1-product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.06);
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--c-link-gold);
+}
+.v1-product img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.v1-product-info { flex: 1; }
+.v1-product-label {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-link-gold);
+}
+.v1-product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-white);
+}
+.v1-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.v1-meta {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+
+/*# Endorsement widget – VARIATION 2: Product Feature Card #*/
+.v2-endorsement {
+  background: var(--c-white);
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 24px rgba(39,34,25,0.12);
+}
+.v2-product-panel {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  border-right: 1px solid rgba(39,34,25,0.08);
+  text-align: center;
+  gap: 1rem;
+}
+.v2-product-panel img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+.v2-product-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--c-gold);
+  margin-top: 0.5rem;
+}
+.v2-product-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+.v2-product-panel .btn-cta { margin-top: 0.5rem; }
+.v2-endorsement-panel {
+  flex: 1 1 320px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.v2-section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--c-link-gold);
+  border-bottom: 1px solid var(--c-link-gold);
+  padding-bottom: 0.5rem;
+}
+.v2-quote-mark {
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--c-link-gold);
+  opacity: 0.4;
+  font-family: Georgia, serif;
+}
+.v2-quote {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--c-espresso);
+  font-style: italic;
+}
+.v2-star-row { display: flex; align-items: center; gap: 0.5rem; }
+.v2-star-label { font-size: 0.8rem; color: #999; }
+.v2-expert-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--c-bg);
+  border-left: 3px solid var(--c-mid-brown);
+}
+.v2-expert-badge img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.v2-badge-name { font-size: 0.95rem; font-weight: 700; color: var(--c-espresso); }
+.v2-badge-title { font-size: 0.78rem; color: var(--c-link-gold); text-transform: uppercase; letter-spacing: 1px; }
+.v2-date { font-size: 0.75rem; color: #aaa; text-align: right; }
+
+/*# Endorsement widget – VARIATION 3: Magazine Pull-Quote #*/
+.v3-endorsement {
+  background-color: var(--c-mid-brown);
+  color: var(--c-white);
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  grid-template-rows: auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+.v3-endorsement::after {
+  content: "\201C";
+  position: absolute;
+  left: -10px;
+  bottom: -120px;
+  font-size: 500px;
+  line-height: 1;
+  color: var(--c-espresso);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.v3-main {
+  padding: 3rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.v3-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--c-link-gold);
+}
+.v3-quote {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--c-white);
+  border-left: 4px solid var(--c-link-gold);
+  padding-left: 1.2rem;
+}
+.v3-expert-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.v3-expert-row img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--c-link-gold);
+  flex-shrink: 0;
+}
+.v3-expert-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-white);
+}
+.v3-expert-title {
+  font-size: 0.8rem;
+  color: var(--c-link-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.v3-expert-bio {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  margin-top: 0.2rem;
+}
+.v3-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.v3-date { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+.v3-product-sidebar {
+  background: var(--c-espresso);
+  border-left: 1px solid rgba(255,255,255,0.12);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.v3-sidebar-label {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--c-link-gold);
+}
+.v3-product-sidebar img {
+  max-width: 140px;
+  max-height: 140px;
+  object-fit: contain;
+}
+.v3-product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-white);
+}
+.v3-product-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.v3-product-sidebar .btn-cta { width: 100%; text-align: center; margin-top: auto; }
+
+/*# Endorsement widget – responsive #*/
+@media (max-width: 700px) {
+  .v3-endorsement { grid-template-columns: 1fr; }
+  .v3-product-sidebar { border-left: none; border-top: 1px solid rgba(255,255,255,0.15); }
+}
+@media (max-width: 640px) {
+  .v1-expert { flex: 0 0 100%; }
+  .v1-content { padding: 2rem; }
+  .v1-quote { font-size: 1.15rem; }
+
+  .v2-product-panel { border-right: none; border-bottom: 1px solid rgba(39,34,25,0.08); }
+
+  .v3-quote { font-size: 1.2rem; }
+}

@@ -106,14 +106,26 @@ We will provide context explaining we will enhance an existing content model. Th
 1. Copy that tool's [gh-copilot/.github folder](https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/v0.1.0/src/widget-creation/gh-copilot/.github) into the current repository folder at the root
    - **Note**: for editors other than VS Code with GitHub Copilot, use the appropriate folders in the repository
    - **Note**: this will be simpler in the future with AI plugins in VS Code (already available in Claude Code and Cursor)
+
+   ```powershell
+   cp -R .\.github\ ..\..\..\..\xperience-by-kentico-labs-kenticopilot\
+   ```
+
+   or
+
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
+   ```markdown
+   add this folder and its files to this repository so i can use the KentiCopilot widget generation tools here
+   https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/main/src/widget-creation/gh-copilot/.github
+   ```
+
 1. Request the agent to perform research for the widget you want to generate
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
-   /widget-create-research
-
-   For the requirements described in: .agent-resources/endorsements/requirements.md
+   /widget-create-research .agent-resources/endorsements
    ```
 
 1. Request the agent write the widget code using the newly generated instructions
@@ -121,9 +133,7 @@ We will provide context explaining we will enhance an existing content model. Th
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
-   /widget-create-implementation
-
-   Follow instructions in: .agent-resources/endorsements/ENDORSEMENT.instructions.md
+   /widget-create-implementation .agent-resources/endorsements/WIDGET_CREATE.instructions.md
    ```
 
 ## (optional) Generate widget templates with AI
