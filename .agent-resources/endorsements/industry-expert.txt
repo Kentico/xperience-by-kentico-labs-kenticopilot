@@ -1,3 +1,5 @@
+Expert---
+
 Name
 Dana Jones
 Title
@@ -8,3 +10,17 @@ Website URL
 https://chatgpt.com/c/69a7b813-27c0-8325-9538
 Specialties
 []
+
+Endorsement---
+
+Item name
+Dana Jones + Porlex Tall Ceramic Burr Grinder
+
+Quote
+The Porlex Tall is one of those grinders that punches above its weight. The ceramic burrs produce a surprisingly consistent grind for a manual grinder, which is essential if you want balanced extraction. I also like the larger capacity compared to smaller travel grinders—it’s enough for a couple cups without sacrificing portability. For anyone who values fresh coffee at home or on the road, it’s a simple, durable tool that just works
+
+Date
+3/3/2026
+
+Rating
+4
