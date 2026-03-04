@@ -40,14 +40,20 @@ Alternatively, you can provide the context yourself if you have a specific conte
 
 We will provide context explaining we will enhance an existing content model. The workflow will define a model strategy based entirely on this context.
 
-1. Start the content modeling MCP server
+1. Ensure the content modeling MCP server and docs MCP server are running and available to the agent session
 1. Run the [Start content modeling](https://docs.kentico.com/guides/architecture/content-modeling/content-modeling-mcp#getting-started) workflow via prompt
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
    /mcp.kentico-cm-mcp.start_content_modeling
+   ```
 
+1. Paste the following into the text input for the content modeling prompt context:
+
+   💡 ${\color{lightgreen}Agent \space prompt}$
+
+   ```markdown
    Dancing Goat cafe, high-end coffee and coffee accessories online retailer featuring articles for coffee enthusiasts.
 
    We need to enhance our existing content model.
@@ -85,9 +91,8 @@ We will provide context explaining we will enhance an existing content model. Th
 
 ## Content type creation via MCP server
 
+1. Ensure the content management MCP server and docs MCP server are running and available to the agent session. The content modeling MCP server is no longer required.
 1. Request the agent create content types based on the content modeling artifacts
-
-   **Note**: Ensure the MCP server is running and the tools are enabled for the agent session
 
    💡 ${\color{lightgreen}Agent \space prompt}$
 
@@ -115,7 +120,7 @@ We will provide context explaining we will enhance an existing content model. Th
 1. Review the instructions for the [widget creation tool](https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/main/src/widget-creation)
 1. Copy that tool's [gh-copilot/.github folder](https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/v0.1.0/src/widget-creation/gh-copilot/.github) into the current repository folder at the root
    - **Note**: for editors other than VS Code with GitHub Copilot, use the appropriate folders in the repository
-   - **Note**: this will be simpler in the future with AI plugins in VS Code (already available in Claude Code and Cursor)
+   - **Note**: this tool adoption process will be simpler in the future with [agent plugins in VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-plugins), [Claude Code](https://code.claude.com/docs/en/plugins), and [Cursor](https://cursor.com/docs/plugins)
 
    ```powershell
    cp -R .\.github\ ..\..\..\..\xperience-by-kentico-labs-kenticopilot\
@@ -130,8 +135,7 @@ We will provide context explaining we will enhance an existing content model. Th
    https://github.com/Kentico/xperience-by-kentico-kenticopilot/tree/main/src/widget-creation/gh-copilot/.github
    ```
 
-   In the near future you will be able to use plugins and a Kentico plugin marketplace to easily install the tools
-
+1. Ensure the docs MCP server is running and available to the agent session. The management API and content modeling MCP servers are no longer required.
 1. Request the agent to perform research for the widget you want to generate
 
    💡 ${\color{lightgreen}Agent \space prompt}$
@@ -145,7 +149,7 @@ We will provide context explaining we will enhance an existing content model. Th
    💡 ${\color{lightgreen}Agent \space prompt}$
 
    ```markdown
-   /widget-create-implementation .agent-resources/endorsements/WIDGET_CREATE.instructions.md
+   /widget-create-implementation .agent-resources/endorsements/WIDGET_CREATION.instructions.md
    ```
 
 ## (optional) Generate widget templates with AI
