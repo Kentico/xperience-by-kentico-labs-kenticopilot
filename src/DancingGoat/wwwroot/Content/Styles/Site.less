@@ -1112,28 +1112,77 @@ a + .article-tile-info .article-tile-date {
 }
 
 /*# Shopping cart #*/
-.shopping-cart-item {
-    margin: 1.5rem;
+.cart-order-promotion {
+    background-color: @color-brown;
+    color: @color-white;
+    padding: 1rem;
 }
 
-.shopping-cart-quantity {
-    padding: 0.5625rem 0.5rem;
-    width: 4rem;
+.cart-promotion-code {
+    margin-top: 1rem;
+    padding: 1rem 0rem 1rem 0;
+
+    &.cart-promotion-code--collapsed {
+        .cart-promotion-toggle {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .cart-promotion-code-form {
+            display: none;
+        }
+    }
 }
 
-.shopping-cart-img {
-    max-width: 14rem;
-    max-height: 14rem;
+.cart-coupons-title {
+    margin-top: 1.5rem;
 }
 
-.coffee-detail-page {
-    figure {
-        margin: 0 0 1.25rem 0;
-        text-align: center;
+.cart-coupons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    border-bottom: 1px solid @color-lightestbrown;
+
+    .cart-coupon-value {
+        width: 100%;
+        font-weight: bold;
+        padding: 1rem 0.5rem 1rem 0.5rem;
     }
 
-    .image {
-        border: 1px solid #e5e5e5;
+    .cart-coupon-message {
+        text-wrap: nowrap;
+    }
+    
+    .cart-coupon-remove {
+        color: @color-black;
+        background-color: @color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+.cart-promotion-code-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+
+    .cart-promotion-code-value {
+        width: 100%;
+
+        .cart-promotion-code-input {
+            border: 1px solid @color-lightestbrown;
+            padding-left: 0.8rem;
+            height: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .cart-promotion-code-button {
+        padding: 0 0 0 0.5rem;
+        margin: 0;
     }
 }
 
@@ -1168,7 +1217,7 @@ a + .article-tile-info .article-tile-date {
 /*# Cafe tile #*/
 .cafe-tile {
     background: @color-lightestbrown;
-    color: #FFF;
+    color: @color-white;
     height: 200px;
     overflow: hidden;
 }
@@ -1182,7 +1231,7 @@ a + .article-tile-info .article-tile-date {
 .cafe-tile-address-anchor:hover,
 .cafe-tile-address-anchor:focus,
 .cafe-tile-address-anchor:active {
-    color: #FFF;
+    color: @color-white;
 }
 
 .cafe-tile-image {
@@ -1200,7 +1249,7 @@ a + .article-tile-info .article-tile-date {
 /*# Cafe image tile #*/
 .cafe-image-tile {
     background: @color-lightbrown;
-    color: #FFF;
+    color: @color-white;
 }
 
 .cafe-image-tile-address {
@@ -1212,7 +1261,7 @@ a + .article-tile-info .article-tile-date {
 .cafe-image-tile-address-anchor:hover,
 .cafe-image-tile-address-anchor:focus,
 .cafe-image-tile-address-anchor:active {
-    color: #FFF;
+    color: @color-white;
 }
 
 .cafe-image-tile-image {

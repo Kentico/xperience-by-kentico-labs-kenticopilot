@@ -80,6 +80,12 @@ internal sealed class ProductDataRetriever<TProductIdentifier, TProductData> : I
         {
             // Retrieve the standalone product or the parent product of a product variant
             var product = productsResult.FirstOrDefault(p => (p as IContentItemFieldsSource).SystemFields.ContentItemID == productIdentifier.Identifier);
+            if (product == null)
+            {
+                // If the product is not found, continue to the next product identifier.
+                // This can happen if the product is in shopping cart but not in the database.
+                continue;
+            }
 
             string skuCode = (product as IProductSKU)?.ProductSKUCode;
 

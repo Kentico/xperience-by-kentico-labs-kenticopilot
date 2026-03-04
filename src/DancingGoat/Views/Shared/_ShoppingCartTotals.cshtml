@@ -6,19 +6,22 @@
 
 <div class="cart-total">
     <div class="cart-total-viewer">
+        <div class="summary-title">
+            <span>@HtmlLocalizer["Order summary"]</span>
+        </div>
         @if (Model.TotalDiscount > 0)
         {
             <div class="cart-item-viewer">
                 <div class="label">
-                    <span>@HtmlLocalizer["Subtotal"]</span>
+                    <span>@HtmlLocalizer["Previous price"]</span>
                 </div>
-                <div class="value">
+                <div class="value previous-price">
                     <price>@Model.SubtotalPrice</price>
                 </div>
             </div>
             <div class="cart-totals-summary">
                 <div class="label">
-                    <span>@HtmlLocalizer["Discount"]</span>
+                    <span>@HtmlLocalizer["You will save"]</span>
                 </div>
                 <div class="value">
                     <price>-@Model.TotalDiscount</price>
@@ -27,7 +30,7 @@
         }
         <div class="cart-grand-total">
             <div class="label">
-                <span>@HtmlLocalizer["Total price"]</span>
+                <span>@HtmlLocalizer["Total amount"]</span>
             </div>
             <div class="value">
                 <price>@Model.TotalPrice</price>

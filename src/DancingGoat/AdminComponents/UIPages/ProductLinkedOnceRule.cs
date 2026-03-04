@@ -11,7 +11,7 @@ using DancingGoat.Models;
 
 using Kentico.Xperience.Admin.Base.Forms;
 
-[assembly: RegisterFormValidationRule(ProductLinkedOnceRule.IDENTIFIER, typeof(ProductLinkedOnceRule), "Product linked only once", "Checks whether product is already linked once.")]
+[assembly: RegisterFormValidationRule(ProductLinkedOnceRule.IDENTIFIER, typeof(ProductLinkedOnceRule), "{$dancinggoat.formvalidationrule.productlinkedonce.name$}", "{$dancinggoat.formvalidationrule.productlinkedonce.description$}")]
 
 namespace DancingGoat.AdminComponents.UIPages;
 

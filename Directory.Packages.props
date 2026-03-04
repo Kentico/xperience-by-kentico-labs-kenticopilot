@@ -12,6 +12,7 @@
     <PackageVersion Include="Kentico.Xperience.ManagementApi" Version="31.2.1-preview" />
     <PackageVersion Include="kentico.xperience.mjml" Version="31.2.1" />
     <PackageVersion Include="kentico.xperience.webapp" Version="31.2.1" />
+    <PackageVersion Include="Magick.NET-Q8-AnyCPU" Version="14.10.3" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="9.32.0.97167" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 
+using CMS.Base;
 using CMS.ContactManagement;
 using CMS.DataEngine;
 using CMS.DataProtection;
@@ -24,6 +25,7 @@ namespace DancingGoat.ViewComponents
         private readonly IWebPageDataContextRetriever webPageDataContextRetriever;
         private readonly IWebPageUrlRetriever urlRetriever;
         private readonly IWebsiteChannelContext websiteChannelContext;
+        private readonly IReadOnlyModeProvider readOnlyModeProvider;
 
 
         public TrackingConsentViewComponent(
@@ -32,7 +34,8 @@ namespace DancingGoat.ViewComponents
             IPreferredLanguageRetriever currentLanguageRetriever,
             IWebPageDataContextRetriever webPageDataContextRetriever,
             IWebPageUrlRetriever urlRetriever,
-            IWebsiteChannelContext websiteChannelContext)
+            IWebsiteChannelContext websiteChannelContext,
+            IReadOnlyModeProvider readOnlyModeProvider)
         {
             this.consentInfoProvider = consentInfoProvider;
             this.consentAgreementService = consentAgreementService;
@@ -40,6 +43,7 @@ namespace DancingGoat.ViewComponents
             this.webPageDataContextRetriever = webPageDataContextRetriever;
             this.urlRetriever = urlRetriever;
             this.websiteChannelContext = websiteChannelContext;
+            this.readOnlyModeProvider = readOnlyModeProvider;
         }
 
 
@@ -52,6 +56,7 @@ namespace DancingGoat.ViewComponents
                 var currentLanguage = currentLanguageRetriever.Get();
                 var consentModel = new ConsentViewModel
                 {
+                    IsReadOnly = readOnlyModeProvider.IsReadOnly,
                     ConsentShortText = (await consent.GetConsentTextAsync(currentLanguage)).ShortText,
                     ReturnPageUrl = webPageDataContextRetriever.TryRetrieve(out var currentWebPageContext)
                         ? (await urlRetriever.Retrieve(currentWebPageContext.WebPage.WebPageItemID, currentLanguage, cancellationToken: HttpContext.RequestAborted)).RelativePath

@@ -41,7 +41,9 @@ namespace DancingGoat
             services.AddSingleton<CountryStateRepository>();
             services.AddSingleton<ProductRepository>();
             services.AddSingleton<PaymentRepository>();
+            services.AddSingleton<PromotionCouponRepository>();
             services.AddSingleton<ShippingRepository>();
+            services.AddTransient<UpsellOrderDiscountService>();
             services.AddTransient<IPriceFormatter, PriceFormatter>();
 
             // Register extractors for product types

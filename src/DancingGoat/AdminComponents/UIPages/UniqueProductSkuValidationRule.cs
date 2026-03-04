@@ -9,7 +9,7 @@ using DancingGoat.Commerce;
 using Kentico.Xperience.Admin.Base.Authentication;
 using Kentico.Xperience.Admin.Base.Forms;
 
-[assembly: RegisterFormValidationRule(UniqueProductSkuValidationRule.IDENTIFIER, typeof(UniqueProductSkuValidationRule), "Unique SKU value", "Checks whether the field does not contain a product SKU that is already being used.")]
+[assembly: RegisterFormValidationRule(UniqueProductSkuValidationRule.IDENTIFIER, typeof(UniqueProductSkuValidationRule), "{$dancinggoat.formvalidationrule.uniquesku.name$}", "{$dancinggoat.formvalidationrule.uniquesku.description$}")]
 
 namespace DancingGoat.AdminComponents.UIPages;
 

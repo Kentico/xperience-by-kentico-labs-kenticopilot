@@ -57,10 +57,11 @@ public sealed class OrderService
             }),
             BillingAddress = ConvertAddress(billingAddress, customer),
             ShippingAddress = !shippingAddress.IsSameAsBilling ? ConvertAddress(shippingAddress, customer) : null,
-            MemberId = memberId,
+            BuyerIdentifier = BuyerIdentifier.FromMemberId(memberId),
             PaymentMethodId = paymentMethodId,
             ShippingMethodId = shippingMethodId,
             OrderNumber = await orderNumberGenerator.GenerateOrderNumber(cancellationToken),
+            CouponCodes = shoppingCartData.CouponCodes,
             LanguageName = languageName
         };
 

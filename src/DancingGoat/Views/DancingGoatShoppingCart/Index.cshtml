@@ -42,15 +42,13 @@
     {
         <div class="col-md-4">
             <div class="cart-right-panel floating-box">
-                <form>
-                    <div id="shoppingCartTotals">
-                        <partial name="_ShoppingCartTotals" model="Model" />
-                    </div>
+                <div id="shoppingCartTotals">
+                    <partial name="_ShoppingCartTotals" model="Model" />
+                </div>
 
-                    <p>@HtmlLocalizer["Review your shopping cart and checkout"]</p>
+                <p>@HtmlLocalizer["Shipping & tax calculated at checkout."]</p>
 
-                    <a href="@checkoutPageUrl"><input type="button" value="@HtmlLocalizer["checkout"]" class="btn-primary checkout-button btn btn-default" /></a>
-                </form>
+                <a href="@checkoutPageUrl"><input type="button" value="@HtmlLocalizer["Proceed to checkout"]" class="btn-primary checkout-button btn btn-default" /></a>
             </div>
         </div>
     }

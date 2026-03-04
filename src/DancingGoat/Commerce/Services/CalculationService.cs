@@ -81,17 +81,7 @@ public sealed class CalculationService
         var userManager = httpContextAccessor.HttpContext.RequestServices.GetRequiredService<UserManager<ApplicationUser>>();
 
         var user = await userManager.GetUserAsync(httpContextAccessor.HttpContext?.User);
-        int customerId = 0;
-
-        if (user != null)
-        {
-            // The registered member already has a customer account
-            var customer = await customerDataRetriever.GetCustomerForMember(user.Id, cancellationToken);
-            if (customer != null)
-            {
-                customerId = customer.CustomerID;
-            }
-        }
+        int memberId = (user != null) ? user.Id : 0;
 
         var calculationRequest = new DancingGoatPriceCalculationRequest
         {
@@ -103,9 +93,10 @@ public sealed class CalculationService
             ShippingMethodId = shippingMethodId,
             PaymentMethodId = paymentMethodId,
             BillingAddress = GetCustomerData(customerAddress),
-            CustomerId = customerId,
+            BuyerIdentifier = BuyerIdentifier.FromMemberId(memberId),
             LanguageName = preferredLanguageRetriever.Get(),
-            Mode = mode
+            Mode = mode,
+            CouponCodes = shoppingCartData.CouponCodes
         };
 
         return await priceCalculationService.Calculate(calculationRequest, cancellationToken);

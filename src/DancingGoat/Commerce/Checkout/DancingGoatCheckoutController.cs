@@ -103,7 +103,7 @@ public sealed class DancingGoatCheckoutController : Controller
         if (shoppingCart == null)
         {
             return View(await GetCheckoutViewModel(CheckoutStep.OrderConfirmation, customer, billingAddress, shippingAddress,
-                new ShoppingCartViewModel(new List<ShoppingCartItemViewModel>(), 0, 0, 0, 0), paymentShipping, 0, cancellationToken));
+                new ShoppingCartViewModel(Enumerable.Empty<ShoppingCartItemViewModel>(), 0, 0, 0, 0, null, Enumerable.Empty<CouponCodeViewModel>()), paymentShipping, 0, cancellationToken));
         }
 
         var shoppingCartData = shoppingCart.GetShoppingCartDataModel();
@@ -307,11 +307,9 @@ public sealed class DancingGoatCheckoutController : Controller
         var languageName = currentLanguageRetriever.Get();
 
         var products = await productRepository.GetProductsByIds(shoppingCartData.Items.Select(item => item.ProductIdentifier.Identifier), cancellationToken);
-
         var productPageUrls = await productRepository.GetProductPageUrls(products.Cast<IContentItemFieldsSource>().Select(p => p.SystemFields.ContentItemID), cancellationToken);
 
-        var subtotal = PriceCalculationTotalsCalculator.GetSubtotal(calculationResult);
-        var totalDiscount = PriceCalculationTotalsCalculator.GetTotalDiscountAmount(calculationResult);
+        var totalWithoutShippingAndTax = PriceCalculationTotalsCalculator.GetTotalWithoutShippingAndTax(calculationResult);
 
         return new ShoppingCartViewModel(
             shoppingCartData.Items.Select(item =>
@@ -322,7 +320,7 @@ public sealed class DancingGoatCheckoutController : Controller
 
                 var calculationItem = calculationResult.Items.FirstOrDefault(i => i.ProductIdentifier == item.ProductIdentifier);
 
-                return product == null
+                return ((product == null) || (calculationItem == null))
                     ? null
                     : new ShoppingCartItemViewModel(
                         item.ProductIdentifier.Identifier,
@@ -331,17 +329,19 @@ public sealed class DancingGoatCheckoutController : Controller
                         pageUrl,
                         item.Quantity,
                         product.ProductFieldPrice,
-                        calculationItem?.LineSubtotalAfterLineDiscount ?? item.Quantity * product.ProductFieldPrice,
+                        calculationItem.LineSubtotalAfterLineDiscount,
                         item.Quantity * product.ProductFieldPrice,
-                        calculationItem?.PromotionData.CatalogPromotionCandidates.FirstOrDefault(c => c.Applied)?.PromotionCandidate as DancingGoatCatalogPromotionCandidate,
+                        calculationItem.PromotionData.CatalogPromotionCandidates.FirstOrDefault(c => c.Applied)?.PromotionCandidate as DancingGoatCatalogPromotionCandidate,
                         item.ProductIdentifier.VariantIdentifier);
             })
             .Where(x => x != null)
             .ToList(),
             calculationResult.GrandTotal,
-            subtotal,
+            totalWithoutShippingAndTax,
             calculationResult.TotalTax,
-            totalDiscount);
+            0,
+            null,
+            Enumerable.Empty<CouponCodeViewModel>());
     }
 
 
