@@ -82,7 +82,38 @@ We will provide context explaining we will enhance an existing content model. Th
    - Always use the kentico-docs-mcp MCP server to find the best practices for content type naming conventions.
    ```
 
+1. Answer any questions for phase 1:
+
+   ```markdown
+   1. What is your team's experience level with Xperience by Kentico content modeling?
+      c) Advanced
+   2. What is the expected content volume for endorsements and industry experts?
+      a) Low
+   3. How important is content reuse across channels (website + email)?
+      b) Extensive
+   ```
+
+   ```markdown
+   1. Do endorsements and expert profiles require a review/approval workflow before publishing?
+      b) Yes
+   2. Will endorsements or expert profiles need to be categorized or filtered (e.g., by product category, region, or expertise)?
+      a) No
+   3. Is the Dancing Goat site multilingual, or is English the only language?
+      c) Multiple languages
+   ```
+   
 1. Allow the `content_modeling_validate_requirements` tool to run
+1. Answer any questions for phase 1:
+
+   ```markdown
+   1. What is your team's experience level with Xperience by Kentico content modeling?
+      c) Advanced
+   2. What is the expected content volume for endorsements and industry experts?
+      a) Low
+   3. How important is content reuse across channels (website + email)?
+      b) Extensive
+   ```
+
 1. Allow the `content_modeling_validate_content_types` tool to run. The agent might iterate on this process until the validation passes.
 1. Allow the `content_modeling_validate_relationships` tool to run.
 1. Allow the `content_modeling_validate_pagebuilder` tool to run.
