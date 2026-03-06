@@ -103,17 +103,6 @@ We will provide context explaining we will enhance an existing content model. Th
    ```
    
 1. Allow the `content_modeling_validate_requirements` tool to run
-1. Answer any questions for phase 1:
-
-   ```markdown
-   1. What is your team's experience level with Xperience by Kentico content modeling?
-      c) Advanced
-   2. What is the expected content volume for endorsements and industry experts?
-      a) Low
-   3. How important is content reuse across channels (website + email)?
-      b) Extensive
-   ```
-
 1. Allow the `content_modeling_validate_content_types` tool to run. The agent might iterate on this process until the validation passes.
 1. Allow the `content_modeling_validate_relationships` tool to run.
 1. Allow the `content_modeling_validate_pagebuilder` tool to run.
