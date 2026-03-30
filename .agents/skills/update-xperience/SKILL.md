@@ -5,6 +5,8 @@ description: Automates NuGet and npm package updates for Xperience by Kentico pr
 
 # Update Xperience Project
 
+Complete all steps below autonomously unless the user prompts otherwise.
+
 ## Quick start
 
 ```
